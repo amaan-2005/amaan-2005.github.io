@@ -1,9 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Amaan's Workspace</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amaan's Workspace</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Amaan’s Workspace</h1>
+
+  <!-- Animated Background -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">Amaan’s Workspace</div>
+
+    <div class="search-container">
+      <input type="text" placeholder="Search @ Amaan’s Workspace">
+    </div>
+
+    <div class="profile">
+      <img src="https://via.placeholder.com/40" alt="Profile" id="profilePic">
+      <div class="profile-popup" id="profilePopup">
+        <img src="https://via.placeholder.com/60" alt="Profile">
+        <p>Mursith Amaan</p>
+        <a href="#">View Profile</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Grid Section -->
+  <main class="grid" id="postGrid">
+    <!-- Posts will auto generate here -->
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    © Amaan’s Workspace
+  </footer>
+
+  <script src="posts.js"></script>
+  <script src="script.js"></script>
+
 </body>
 </html>
