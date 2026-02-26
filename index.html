@@ -1,51 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amaan's Workspace</title> <style>
-        body { background-color: #020617; color: #00e5ff; font-family: 'Courier New', monospace; margin: 0; padding-bottom: 80px; }
-        header {
-            position: sticky; top: 0; z-index: 1000;
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 15px 5%; background: rgba(2, 6, 23, 0.9);
-            backdrop-filter: blur(15px); border-bottom: 1px solid rgba(0, 229, 255, 0.2);
-        }
-        .search-box {
-            background: rgba(0, 229, 255, 0.05); border: 1px solid #00e5ff;
-            border-radius: 20px; padding: 8px 15px; color: #00e5ff; width: 250px; outline: none;
-        }
-        .post-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 20px 5%; }
-        .glass-card {
-            background: rgba(0, 229, 255, 0.03); backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 229, 255, 0.1); border-radius: 15px;
-            padding: 20px; cursor: pointer; transition: 0.3s;
-        }
-        .glass-card:hover { border-color: #00e5ff; transform: translateY(-5px); box-shadow: 0 0 20px rgba(0, 229, 255, 0.2); }
-        .bottom-nav { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 400px; height: 60px; background: rgba(2, 6, 23, 0.95); backdrop-filter: blur(15px); border: 1px solid rgba(0, 229, 255, 0.3); border-radius: 30px; display: flex; justify-content: space-around; align-items: center; }
-        @media (max-width: 800px) { .post-grid { grid-template-columns: 1fr; } }
-    </style>
+<title>Amaan's Workspace</title>
 </head>
 <body>
-    <header>
-        <div style="font-weight: bold; font-size: 18px;">Amaan's Workspace</div> <input type="text" class="search-box" placeholder="Search @ Amaan's Workspace..."> <div onclick="alert('Access Granted: Amaan')" style="width: 35px; height: 35px; border: 2px solid #00e5ff; border-radius: 50%; cursor: pointer;"></div>
-    </header>
-
-    <div class="post-grid">
-        <div class="glass-card" onclick="window.location.href='project1.html'">
-            <h3>Project: Source Code</h3>
-            <p style="color: #a1a1aa; font-size: 14px;">View my programming archives here...</p>
-            <div style="font-size: 11px; margin-top: 15px; opacity: 0.6;">📅 Feb 26, 2026</div>
-        </div>
-        
-        <div class="glass-card">
-            <h3>Academic Files</h3>
-            <p style="color: #a1a1aa; font-size: 14px;">Analytics system documentation.</p>
-        </div>
-    </div>
-
-    <div class="bottom-nav">
-        <span>🏠</span><span>🔍</span><span>📂</span><span>👤</span>
-    </div>
+<h1>Amaan’s Workspace</h1>
 </body>
 </html>
