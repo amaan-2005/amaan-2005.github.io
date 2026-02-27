@@ -32,38 +32,55 @@ if (typeof posts !== "undefined") {
       grid.appendChild(card);
     });
 }
-// GREY CODE BACKGROUND
+// ===== PREMIUM FLOATING TEXT BACKGROUND =====
+
 const canvas = document.getElementById("bgCanvas");
 const ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
 
-const letters = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const fontSize = 14;
-const columns = canvas.width / fontSize;
-const drops = [];
+const particles = [];
+const text = "AMAANS WORKSPACE";
+const smallChars = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-for(let i=0; i<columns; i++){
-  drops[i] = 1;
+const particleCount = 80;
+
+for (let i = 0; i < particleCount; i++) {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    size: Math.random() * 20 + 10,
+    speed: Math.random() * 0.5 + 0.2,
+    text: Math.random() > 0.7 ? text : smallChars[Math.floor(Math.random() * smallChars.length)],
+    opacity: Math.random() * 0.3 + 0.05
+  });
 }
 
-function draw(){
-  ctx.fillStyle = "rgba(11,14,20,0.08)";
-  ctx.fillRect(0,0,canvas.width,canvas.height);
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = "#2f323a";
-  ctx.font = fontSize + "px monospace";
+  particles.forEach(p => {
 
-  for(let i=0; i<drops.length; i++){
-    const text = letters.charAt(Math.floor(Math.random()*letters.length));
-    ctx.fillText(text, i*fontSize, drops[i]*fontSize);
+    ctx.globalAlpha = p.opacity;
+    ctx.fillStyle = "#3a3f47";
+    ctx.font = `${p.size}px monospace`;
 
-    if(drops[i]*fontSize > canvas.height && Math.random() > 0.975){
-      drops[i] = 0;
+    ctx.fillText(p.text, p.x, p.y);
+
+    p.y += p.speed;
+
+    if (p.y > canvas.height + 50) {
+      p.y = -50;
+      p.x = Math.random() * canvas.width;
     }
-    drops[i]++;
-  }
+  });
+
+  requestAnimationFrame(draw);
 }
 
-setInterval(draw, 50);
+draw();
