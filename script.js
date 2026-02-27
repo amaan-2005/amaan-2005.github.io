@@ -45,8 +45,8 @@ resizeCanvas();
 window.addEventListener("resize", resizeCanvas);
 
 const particles = [];
-const text = "AMAANS WORKSPACE";
-const smallChars = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const text = "AMAAN'S WORKSPACE";
+const smallChars = "0123456789";
 
 const particleCount = 80;
 
